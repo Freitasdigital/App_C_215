@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LastChance Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: edc59fa54db2c4ee4b5fcf12bf60ebd5, type: 3}
+    - {fileID: 102900000, guid: 3038c9f4d98984c22b7b92fb43d3d4a3, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 25459d14a85d44f1bb316c367aad2900, type: 3}
+  - {fileID: 21300000, guid: 6e91b595290fc4c00a5b41d7ed3ef711, type: 3}
+  - {fileID: 21300000, guid: 4a1a1d97d10764761a660a01ddca4e17, type: 3}
+  - {fileID: 21300000, guid: 61b420a763abc41bfb0be03995a93dc4, type: 3}
+  - {fileID: 21300000, guid: e2ad3c081e563473eb5b4cd5e5ae9c11, type: 3}
+  - {fileID: 21300000, guid: 38ae359bfe00a471ba19fa4e577d4946, type: 3}
+  - {fileID: 21300000, guid: 4324fd5c352fe47019df5773e206e6fa, type: 3}
+  - {fileID: 21300000, guid: bb00ae0fed9ae480fad9ee7d468a5cc5, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SpinButton
+  - sprite 1
+  - Heart
+  - Title
+  - LastChanceContainer
+  - sprite 3
+  - sprite 2
+  - Money
+  m_RenderDataMap: {}
+  m_Tag: LastChance Sprite Atlas
+  m_IsVariant: 0

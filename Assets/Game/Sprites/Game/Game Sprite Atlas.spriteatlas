@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Game Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2a85f583761f441cc956965991e77a1e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1e57ad90394b64cdf9555a35b3856b08, type: 3}
+  - {fileID: 21300000, guid: d752e0e117fab42ee830334ec6b92615, type: 3}
+  - {fileID: 21300000, guid: 4e61df77d9d8447b6b5f6b82745a5e8d, type: 3}
+  - {fileID: 21300000, guid: d9dd2119cb9db4c38aa6a0d82de71b06, type: 3}
+  - {fileID: 21300000, guid: 73c64679216a74d30b9d3e7bd2804004, type: 3}
+  - {fileID: 21300000, guid: f3e1249a7069f41b8ae0e753743c7319, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - background
+  - score panel
+  - btn_pause
+  - live inactive
+  - Coin
+  - live active
+  m_RenderDataMap: {}
+  m_Tag: Game Sprite Atlas
+  m_IsVariant: 0

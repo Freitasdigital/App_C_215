@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Settings Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 499e9ea3405cd486795992a89de8b3d7, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 35e0f97001b924d1b931946f98cdf946, type: 3}
+  - {fileID: 21300000, guid: f47d84c1b1090439cbf423256fb236c0, type: 3}
+  - {fileID: 21300000, guid: 6c552cb23a7c645b5a0f4929b808c860, type: 3}
+  - {fileID: 21300000, guid: 66939144eca8f4db2bb1eab2ca583196, type: 3}
+  - {fileID: 21300000, guid: 26df2da4cef824549a6de815c87aaa77, type: 3}
+  - {fileID: 21300000, guid: ff9762d5f84474891ae9e1ebc2f9880f, type: 3}
+  - {fileID: 21300000, guid: dca93607173514977aa585aa4eba1338, type: 3}
+  - {fileID: 21300000, guid: 00fabc0784bdb47c78f2d1d660bf8ef1, type: 3}
+  - {fileID: 21300000, guid: eadea477122a74b309a1aef52072fefe, type: 3}
+  - {fileID: 21300000, guid: 4f4d6568312f1430fa03636af9a7194e, type: 3}
+  - {fileID: 21300000, guid: 6867b69873d214b369d936a8dc183f15, type: 3}
+  - {fileID: 21300000, guid: c7334a0bf35164d129414505fbc95220, type: 3}
+  - {fileID: 21300000, guid: cb2e440ca2de34fcbb21062faa6d286d, type: 3}
+  - {fileID: 21300000, guid: 05a7375c19b3e487fa61026708e37217, type: 3}
+  - {fileID: 21300000, guid: bdd549bcbfa2f4174af8b173b2f28ba7, type: 3}
+  - {fileID: 21300000, guid: 9087db3ee78264f91a40c687cd0c6310, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Inactive
+  - Cancel
+  - Choose photo
+  - save
+  - Input
+  - +
+  - body setttings
+  - edit
+  - Contents
+  - Fade
+  - terms
+  - btn_close
+  - Make a photo
+  - outline
+  - privacy
+  - Active
+  m_RenderDataMap: {}
+  m_Tag: Settings Sprite Atlas
+  m_IsVariant: 0
