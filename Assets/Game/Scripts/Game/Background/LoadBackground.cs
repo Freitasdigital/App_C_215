@@ -31,7 +31,7 @@ namespace Game.Scripts.Game.Background
 		{
 			if (GameManager.Instance != null)
 			{
-				var id = GameManager.Instance.BallId;
+				var id = GameManager.Instance.LocationId;
 
 				if (id < placesSpritesList.Count - 1)
 					throw new ArgumentOutOfRangeException(nameof(id));

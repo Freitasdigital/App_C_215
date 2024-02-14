@@ -5,6 +5,7 @@ namespace Game.Scripts.Enums
         HomePage,
         Bonus,
         Shop,
-        Settings
+        Settings,
+        Levels
     }
 }

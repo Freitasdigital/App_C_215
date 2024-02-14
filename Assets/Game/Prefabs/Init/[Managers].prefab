@@ -44,6 +44,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a68b8c5a31545e8a0a7d6560365e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5546758578092536619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5179141989432064889}
+  - component: {fileID: 7337069260572205348}
+  m_Layer: 0
+  m_Name: LevelsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5179141989432064889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5546758578092536619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7734725052285445480}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7337069260572205348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5546758578092536619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2160e56d8f879432db46c36e39b7b1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultLevel: 0
+  levelsList:
+  - level: 0
+    enemiesCount: 2
+  - level: 1
+    enemiesCount: 3
+  - level: 2
+    enemiesCount: 2
+  - level: 3
+    enemiesCount: 0
+  - level: 4
+    enemiesCount: 0
+  - level: 5
+    enemiesCount: 0
+  - level: 6
+    enemiesCount: 0
+  - level: 7
+    enemiesCount: 0
+  - level: 8
+    enemiesCount: 0
+  - level: 9
+    enemiesCount: 0
+  stateContainer:
+    openSprite: {fileID: 21300000, guid: 01a0d9556ff984a7592106e4992888b8, type: 3}
+    lockSprite: {fileID: 21300000, guid: 1a29f5aea9f94414680cd98ffb833556, type: 3}
+    doneSprite: {fileID: 21300000, guid: 3d39ea4d666e24ff1bdf950f0ee80ebf, type: 3}
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    lockColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    doneColor: {r: 0.54509807, g: 0.77254903, b: 1, a: 1}
 --- !u!1 &7734725050846727015
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +239,7 @@ Transform:
   - {fileID: 7734725050846727014}
   - {fileID: 7734725052000060526}
   - {fileID: 6739379680811302292}
+  - {fileID: 5179141989432064889}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
