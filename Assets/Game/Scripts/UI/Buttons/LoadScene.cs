@@ -1,4 +1,4 @@
-using Game.Scripts.Enums;
+using Game.LevelsManager.Scripts.Enums;
 using Game.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +8,7 @@ namespace Game.Scripts.UI.Buttons
     [RequireComponent(typeof(Button))]
     public class LoadScene : MonoBehaviour
     {
-        [SerializeField] private Scenes scene;
+        [SerializeField] private Levels level;
         
         private Button _button;
 
@@ -23,11 +23,11 @@ namespace Game.Scripts.UI.Buttons
         {
             if (ScenesManager.Instance != null)
             {
-                ScenesManager.Instance.LoadScene(scene);
+                ScenesManager.Instance.LoadScene(level.ToString());
             }
             else
             {
-                Debug.LogWarning("ScenesManager.Instance is null");
+                Debug.LogWarning($"{nameof(ScenesManager)} is null");
             }
         }
     }

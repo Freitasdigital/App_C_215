@@ -50,19 +50,65 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 1e57ad90394b64cdf9555a35b3856b08, type: 3}
-  - {fileID: 21300000, guid: d752e0e117fab42ee830334ec6b92615, type: 3}
+  - {fileID: 21300000, guid: 21838310d07b04d199348fe319425904, type: 3}
+  - {fileID: 21300000, guid: 76952ac05836c44dea07fe21cf6c2578, type: 3}
+  - {fileID: 21300000, guid: d756f511ec3084066aaf374c60f00ae8, type: 3}
+  - {fileID: 21300000, guid: e05b4295d237f417199515a9a7cd2315, type: 3}
+  - {fileID: 21300000, guid: d0b551c59f3f84a428baeb623a124a96, type: 3}
+  - {fileID: 21300000, guid: d5f9d4763b305434787ef78dbe261233, type: 3}
+  - {fileID: 21300000, guid: 4f9e6f960b28445b598a361a22d1af0d, type: 3}
+  - {fileID: 21300000, guid: ec598d77667164508b4fdd998b44e9d4, type: 3}
   - {fileID: 21300000, guid: 4e61df77d9d8447b6b5f6b82745a5e8d, type: 3}
-  - {fileID: 21300000, guid: d9dd2119cb9db4c38aa6a0d82de71b06, type: 3}
-  - {fileID: 21300000, guid: 73c64679216a74d30b9d3e7bd2804004, type: 3}
-  - {fileID: 21300000, guid: f3e1249a7069f41b8ae0e753743c7319, type: 3}
+  - {fileID: 21300000, guid: a6f83d68c81564ba88e571cf2fb22581, type: 3}
+  - {fileID: 21300000, guid: 5eae3dd8fee924acf866d5864a1c6335, type: 3}
+  - {fileID: 21300000, guid: f8bb20198bdc24c499d1fe8508715f68, type: 3}
+  - {fileID: 21300000, guid: 300db2594b6be422c8a18f7b1ed5daa9, type: 3}
+  - {fileID: 21300000, guid: 8568e589ef9a34d2b8b2203cf433167d, type: 3}
+  - {fileID: 21300000, guid: 88a69c99fe3bf4212a4ff918468675c9, type: 3}
+  - {fileID: 21300000, guid: ed20ccc920bca45bba4a65bb554b132f, type: 3}
+  - {fileID: 21300000, guid: cf6ae06a29bd3461b92883cc43260cda, type: 3}
+  - {fileID: 21300000, guid: 1c25fecac22d54bd5aec18fc31a39d11, type: 3}
+  - {fileID: 21300000, guid: 9be709eb3b5e04bafad17382e7071526, type: 3}
+  - {fileID: 21300000, guid: ddcd1d2c4d9c34e97ba35889cccd893c, type: 3}
+  - {fileID: 21300000, guid: 726a9d6c5bc1749d88ad6fdb0e84f1ba, type: 3}
+  - {fileID: 21300000, guid: 36fc9b9cfb6bd4c61a85987476bed277, type: 3}
+  - {fileID: 21300000, guid: ebb8a2bc3a08d4ba1bcee9cfc93bda6a, type: 3}
+  - {fileID: 21300000, guid: a12b984d8e26c421cae56d5bef18b2ce, type: 3}
+  - {fileID: 21300000, guid: 31cf949d26fc4454da55630ae8775824, type: 3}
+  - {fileID: 21300000, guid: c858f7bd08e2449359ee85a6d77e3cc2, type: 3}
+  - {fileID: 21300000, guid: e1fd9b1e7d0a34c24b9f38e736a68216, type: 3}
+  - {fileID: 21300000, guid: a9e2ca9e8f6a6418ebf2968eec263cfe, type: 3}
+  - {fileID: 21300000, guid: da1eba5f5e5c942888ab7e1d1ff8ebe7, type: 3}
   m_PackedSpriteNamesToIndex:
-  - background
-  - score panel
+  - Body Paused
+  - exit
+  - level completed
+  - Level failed
+  - Blue Fader
+  - Button Exit - Enabled
+  - Hand
+  - tire
   - btn_pause
-  - live inactive
-  - Coin
-  - live active
+  - Ground
+  - Button Yes - Enabled
+  - Button Buy 25 - Disabled
+  - paused
+  - restart
+  - coin
+  - Button No - Enabled
+  - Trajectory Point
+  - Body level Completed
+  - Button Buy 25 - Enabled
+  - Button Again - Enabled
+  - Ball
+  - Block
+  - wood
+  - Button Menu - Enabled
+  - Button Restart - Enabled
+  - Body Exit
+  - Button Play - Enabled
+  - Body Level Failed
+  - Button Next - Enabled
   m_RenderDataMap: {}
   m_Tag: Game Sprite Atlas
   m_IsVariant: 0

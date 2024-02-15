@@ -23,7 +23,16 @@ namespace Game.Scripts.Game.Popups
         
         public void Again()
         {
-            LoadScene(Scenes.GameScene);
+            if (LevelsManager.Scripts.LevelsManager.Instance != null)
+            {
+                var currentLevel = LevelsManager.Scripts.LevelsManager.Instance.GetCurrentLevel();
+                
+                LoadScene(currentLevel.Level.ToString());
+            }
+            else
+            {
+                Debug.LogWarning($"{nameof(LevelsManager)} is null");
+            }
         }
         
         public void Exit()
@@ -34,11 +43,11 @@ namespace Game.Scripts.Game.Popups
             }
             else
             {
-                LoadScene(Scenes.MenuScene);
+                LoadScene(Scenes.MenuScene.ToString());
             }
         }
 
-        private void LoadScene(Scenes scene)
+        private void LoadScene(string scene)
         {
             if (ScenesManager.Instance != null)
             {
@@ -46,7 +55,7 @@ namespace Game.Scripts.Game.Popups
             }
             else
             {
-                Debug.LogWarning($"{nameof(ScenesManager)}.Instance is null");
+                Debug.LogWarning($"{nameof(ScenesManager)} is null");
             }
         }
 
@@ -60,7 +69,7 @@ namespace Game.Scripts.Game.Popups
             }
             else
             {
-                Debug.LogWarning("GameLogic.Instance is null");
+                Debug.LogWarning($"{nameof(GameLogic)} is null");
             }
         }
     }

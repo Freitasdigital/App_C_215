@@ -28,25 +28,32 @@ namespace Game.Scripts.Game.Popups
 
         public void PlayAgain()
         {
-            if (ScenesManager.Instance != null)
+            if (LevelsManager.Scripts.LevelsManager.Instance != null)
             {
-                ScenesManager.Instance.LoadScene(Scenes.GameScene);
+                var currentLevel = LevelsManager.Scripts.LevelsManager.Instance.GetCurrentLevel();
+
+                LoadScene(currentLevel.Level.ToString());
             }
             else
             {
-                Debug.LogWarning("ScenesManager.Instance is null");
+                Debug.LogWarning($"{nameof(LevelsManager)} is null");
             }
         }
 
         public void Exit()
         {
+            LoadScene(Scenes.MenuScene.ToString());
+        }
+        
+        private void LoadScene(string scene)
+        {
             if (ScenesManager.Instance != null)
             {
-                ScenesManager.Instance.LoadScene(Scenes.MenuScene);
+                ScenesManager.Instance.LoadScene(scene);
             }
             else
             {
-                Debug.LogWarning("ScenesManager.Instance is null");
+                Debug.LogWarning($"{nameof(ScenesManager)} is null");
             }
         }
         

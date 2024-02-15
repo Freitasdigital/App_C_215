@@ -45,7 +45,7 @@ namespace Game.Scripts.Game.Popups
 			}
 			else
 			{
-				Debug.LogWarning("GameLogic.Instance is null");
+				Debug.LogWarning($"{nameof(GameLogic)} is null");
 			}
 		}
 		

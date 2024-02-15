@@ -1,4 +1,3 @@
-using Game.Scripts.Enums;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,9 +19,9 @@ namespace Game.Scripts.Managers
             }
         }
 
-        public void LoadScene(Scenes scene)
+        public void LoadScene(string scene)
         {
-            SceneManager.LoadScene(scene.ToString());
+            SceneManager.LoadScene(scene);
         }
     }
 }

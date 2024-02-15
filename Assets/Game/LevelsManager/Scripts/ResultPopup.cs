@@ -70,7 +70,7 @@ namespace Game.LevelsManager.Scripts
             
             if (ScenesManager.Instance != null)
             {
-                ScenesManager.Instance.LoadScene(Scenes.GameScene);
+                //ScenesManager.Instance.LoadScene(Scenes.GameScene);
             }
             else
             {
@@ -117,7 +117,7 @@ namespace Game.LevelsManager.Scripts
         {
             if (ScenesManager.Instance != null)
             {
-                ScenesManager.Instance.LoadScene(Scenes.MenuScene);
+                ScenesManager.Instance.LoadScene(Scenes.MenuScene.ToString());
             }
             else
             {

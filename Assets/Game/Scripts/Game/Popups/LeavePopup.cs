@@ -10,11 +10,11 @@ namespace Game.Scripts.Game.Popups
 		{
 			if (ScenesManager.Instance != null)
 			{
-				ScenesManager.Instance.LoadScene(Scenes.MenuScene);
+				ScenesManager.Instance.LoadScene(Scenes.MenuScene.ToString());
 			}
 			else
 			{
-				Debug.LogWarning("ScenesManager.Instance is null");
+				Debug.LogWarning($"{nameof(ScenesManager)} is null");
 			}
 		}
 		
