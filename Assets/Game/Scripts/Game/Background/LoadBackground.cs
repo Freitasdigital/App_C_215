@@ -33,7 +33,7 @@ namespace Game.Scripts.Game.Background
 			{
 				var id = GameManager.Instance.LocationId;
 
-				if (id < placesSpritesList.Count - 1)
+				if (id >= placesSpritesList.Count)
 					throw new ArgumentOutOfRangeException(nameof(id));
 				
 				_spriteRenderer.sprite = placesSpritesList[id];

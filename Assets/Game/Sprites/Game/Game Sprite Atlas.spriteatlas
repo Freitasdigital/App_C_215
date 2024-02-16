@@ -53,6 +53,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 21838310d07b04d199348fe319425904, type: 3}
   - {fileID: 21300000, guid: 76952ac05836c44dea07fe21cf6c2578, type: 3}
   - {fileID: 21300000, guid: d756f511ec3084066aaf374c60f00ae8, type: 3}
+  - {fileID: 21300000, guid: 84df5d641a49c4cf0939fa53dfc3fdc2, type: 3}
+  - {fileID: 21300000, guid: b51710c4145b84ad79c96ae83cd5455d, type: 3}
   - {fileID: 21300000, guid: e05b4295d237f417199515a9a7cd2315, type: 3}
   - {fileID: 21300000, guid: d0b551c59f3f84a428baeb623a124a96, type: 3}
   - {fileID: 21300000, guid: d5f9d4763b305434787ef78dbe261233, type: 3}
@@ -62,11 +64,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a6f83d68c81564ba88e571cf2fb22581, type: 3}
   - {fileID: 21300000, guid: 5eae3dd8fee924acf866d5864a1c6335, type: 3}
   - {fileID: 21300000, guid: f8bb20198bdc24c499d1fe8508715f68, type: 3}
+  - {fileID: 21300000, guid: e785e8498448e42229165fe9d6b80bbc, type: 3}
   - {fileID: 21300000, guid: 300db2594b6be422c8a18f7b1ed5daa9, type: 3}
   - {fileID: 21300000, guid: 8568e589ef9a34d2b8b2203cf433167d, type: 3}
   - {fileID: 21300000, guid: 88a69c99fe3bf4212a4ff918468675c9, type: 3}
   - {fileID: 21300000, guid: ed20ccc920bca45bba4a65bb554b132f, type: 3}
-  - {fileID: 21300000, guid: cf6ae06a29bd3461b92883cc43260cda, type: 3}
   - {fileID: 21300000, guid: 1c25fecac22d54bd5aec18fc31a39d11, type: 3}
   - {fileID: 21300000, guid: 9be709eb3b5e04bafad17382e7071526, type: 3}
   - {fileID: 21300000, guid: ddcd1d2c4d9c34e97ba35889cccd893c, type: 3}
@@ -83,6 +85,8 @@ SpriteAtlas:
   - Body Paused
   - exit
   - level completed
+  - character 1
+  - Enemy 2
   - Level failed
   - Blue Fader
   - Button Exit - Enabled
@@ -92,11 +96,11 @@ SpriteAtlas:
   - Ground
   - Button Yes - Enabled
   - Button Buy 25 - Disabled
+  - Trajectory Line
   - paused
   - restart
   - coin
   - Button No - Enabled
-  - Trajectory Point
   - Body level Completed
   - Button Buy 25 - Enabled
   - Button Again - Enabled

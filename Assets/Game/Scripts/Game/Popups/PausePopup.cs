@@ -8,25 +8,25 @@ namespace Game.Scripts.Game.Popups
     public class PausePopup : MonoBehaviour
     {
         [SerializeField, Header("Events")] private UnityEvent onExitClick;
-        
+
         [SerializeField, Header("Pause Settings")] private bool isExitConfirmExist;
 
         public void SetPauseActive()
         {
             ChangePauseState(true);
         }
-        
+
         public void Continue()
         {
             ChangePauseState(false);
         }
-        
+
         public void Again()
         {
             if (LevelsManager.Scripts.LevelsManager.Instance != null)
             {
                 var currentLevel = LevelsManager.Scripts.LevelsManager.Instance.GetCurrentLevel();
-                
+
                 LoadScene(currentLevel.Level.ToString());
             }
             else
@@ -34,7 +34,7 @@ namespace Game.Scripts.Game.Popups
                 Debug.LogWarning($"{nameof(LevelsManager)} is null");
             }
         }
-        
+
         public void Exit()
         {
             if (isExitConfirmExist)
