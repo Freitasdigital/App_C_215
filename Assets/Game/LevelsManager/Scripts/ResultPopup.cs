@@ -97,7 +97,7 @@ namespace Game.LevelsManager.Scripts
             
             SetRewardValueText(reward);
             SetActionButtonSprite(nextSprite);
-            SetCurrentScoreText(score, LevelsManager.Instance.GetRequiredScore());
+            SetCurrentScoreText(score, LevelsManager.Instance.GetRequiredEnemiesCount());
             
             //AudioEffectsManager.Playing(AudioClips.ResultWin.ToString());
         }
@@ -108,7 +108,7 @@ namespace Game.LevelsManager.Scripts
             rewardPanel.SetActive(false);
             
             SetActionButtonSprite(againSprite);
-            SetCurrentScoreText(score, LevelsManager.Instance.GetRequiredScore());
+            SetCurrentScoreText(score, LevelsManager.Instance.GetRequiredEnemiesCount());
             
             //AudioEffectsManager.Playing(AudioClips.ResultLose.ToString());
         }

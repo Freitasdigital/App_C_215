@@ -8,11 +8,16 @@ namespace Game.LevelsManager.Scripts
 	{
 		[SerializeField, Header("Level Types")] private Levels level;
 		
-		[SerializeField, Min(0)] private int enemiesCount;
+		[SerializeField, Min(1)] private int enemiesCount;
+		[SerializeField, Min(1)] private int ballsAmount;
+		[SerializeField, Min(1)] private int levelReward;
 
 		public Levels Level => level;
 		
 		public int EnemiesCount => enemiesCount;
+		public int BallsAmount => ballsAmount;
+		public int LevelReward => levelReward;
+		
 		public bool IsOpen => LevelsManager.Instance.IsPreviousLevelDone(level);
 		
 		public bool IsDone

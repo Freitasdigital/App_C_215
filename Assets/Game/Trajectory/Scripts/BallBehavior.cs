@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Game.Scripts.Game.Interfaces;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +13,8 @@ namespace Game.Trajectory.Scripts
 		[SerializeField, Min(0f)] private float maxTorque = 45f;
 		
 		[SerializeField, Header("Destroy Settings"), Min(0f)] private float destroyDelay = 10f;
+
+		public event Action onBallDestroyed;
 		
 		private Rigidbody2D _rigidbody2D;
 		private Coroutine _destroyCoroutine;
@@ -36,13 +40,16 @@ namespace Game.Trajectory.Scripts
 			yield return new WaitForSeconds(destroyDelay);
 
 			Destroy(gameObject);
+			onBallDestroyed?.Invoke();
 		}
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{
-			if (_destroyCoroutine != null) return;
+			_destroyCoroutine ??= StartCoroutine(DestroyAfterDelay());
+			
+			if (!other.gameObject.TryGetComponent(out IDamageable unit)) return;
 
-			_destroyCoroutine = StartCoroutine(DestroyAfterDelay());
+			unit.TakeDamage();
 		}
 	}
 }

@@ -21,9 +21,7 @@ namespace Game.Scripts.UI.Text
         
         public override void SetText(int value)
         {
-            var format = new NumberFormatInfo { NumberGroupSeparator = " " };
-            
-            Text.text = value.ToString("#,0", format);
+            Text.text = value.ToString();
         }
     }
 }

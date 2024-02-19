@@ -11,6 +11,8 @@ namespace Game.Trajectory.Scripts
 		
 		[SerializeField, Header("Bounds")] private float yBound = -3f;
 
+		public BallBehavior CurrentBall { get; private set; }
+
 		private Camera _mainCamera;
 		private Vector3 _throwDirection;
 
@@ -49,8 +51,8 @@ namespace Game.Trajectory.Scripts
 		{
 			SetTrajectoryInactive();
 			
-			var ball = Instantiate(ballPrefab, transform);
-			ball.Throw(_throwDirection);
+			CurrentBall = Instantiate(ballPrefab, transform);
+			CurrentBall.Throw(_throwDirection);
 		}
 		
 		private void GetMousePoint()

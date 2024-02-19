@@ -10,6 +10,7 @@ namespace Game.Scripts.Enums
         SlotsLose,
         SlotsSpin,
         SlotsWin,
-        Result
+        ResultWin,
+        ResultLose
     }
 }

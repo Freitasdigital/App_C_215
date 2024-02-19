@@ -1,3 +1,4 @@
+using Game.Scripts.Game.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,17 +8,7 @@ namespace Game.Trajectory.Scripts
 	[RequireComponent(typeof(Image))]
 	public class AimArea : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
-		[SerializeField, Header("Gun")] private GunBehavior gun;
-		
 		private Image _image;
-
-		private void OnValidate()
-		{
-			if (gun == null)
-			{
-				Debug.LogWarning($"{nameof(gun)} is null");
-			}
-		}
 
 		private void Awake()
 		{
@@ -26,13 +17,27 @@ namespace Game.Trajectory.Scripts
 		
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			gun.SetTrajectoryActive();
+			if (Player.Instance != null)
+			{
+				Player.Instance.SetTrajectoryActive();
+			}
+			else
+			{
+				Debug.LogWarning($"{nameof(Player)} is null");
+			}
 		}
 		
 		public void OnPointerUp(PointerEventData eventData)
 		{
-			gun.Shot();
-			//SetInactive();
+			if (Player.Instance != null)
+			{
+				Player.Instance.ThrowBall();
+				SetInactive();
+			}
+			else
+			{
+				Debug.LogWarning($"{nameof(Player)} is null");
+			}
 		}
 		
 		public void SetActive()

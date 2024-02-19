@@ -83,7 +83,7 @@ namespace Game.LevelsManager.Scripts
 			return score >= _currentLevel.EnemiesCount;
 		}
 		
-		public int GetRequiredScore()
+		public int GetRequiredEnemiesCount()
 		{
 			return _currentLevel.EnemiesCount;
 		}

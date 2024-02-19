@@ -1,33 +1,50 @@
-using System;
 using System.Collections;
-using Game.Scripts.Game.Interfaces;
-using Game.Scripts.Game.Player.States;
+using System.Collections.Generic;
+using Game.Scripts.Enums;
+using Game.Scripts.Game.Animations;
+using Game.Trajectory.Scripts;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Scripts.Game.Player
 {
-	[RequireComponent(typeof(PlayerController))]
-	public class Player : MonoBehaviour, IDamageable
+	[RequireComponent(typeof(CharacterAnimation))]
+	public class Player : MonoBehaviour
 	{
 		public static Player Instance { get; private set; }
 
-		public event Action<bool> OnControlActive;
+		[SerializeField, Header("Events")] private UnityEvent onBallInit;
 		
-        public int Lives => _lives.CurrentLives;
+		[SerializeField, Header("Links")] private GunBehavior gun;
+		
+		[SerializeField, Header("Throw Settings")] private float throwDuration = 0.2f;
+		
+        public int BallsCount => _ballsCount.CurrentBalls;
         
-		private Lives _lives;
-		private PlayerController _playerController;
-		private PlayerAnimation _playerAnimation;
-		
-		private StateMachine _stateMachine;
-		
+		private BallsCount _ballsCount;
+		private CharacterAnimation _characterAnimation;
+
+		private List<BallBehavior> _ballsList;
+
+		private void OnValidate()
+		{
+			if (gun == null)
+			{
+				Debug.LogWarning($"{nameof(gun)} is null");
+			}
+		}
+
+		private void OnDestroy()
+		{
+			UnsubscribeFromAllEvents();
+		}
+
 		private void Awake()
 		{
 			Instance = this;
 			
-			_lives = GetComponent<Lives>();
-			_playerController = GetComponent<PlayerController>();
-			_playerAnimation = GetComponent<PlayerAnimation>();
+			_ballsCount = GetComponent<BallsCount>();
+			_characterAnimation = GetComponent<CharacterAnimation>();
 		}
 
 		private void Start()
@@ -35,50 +52,66 @@ namespace Game.Scripts.Game.Player
 			Init();
 		}
 		
-		public void SetState(IState state)
+		public void AddBall()
 		{
-			_stateMachine.SwitchState(state);
+			_ballsCount.AddBall();
+			BallInit();
 		}
-		
-		public void SetState(IState state, float delay)
+
+		public void SetTrajectoryActive()
 		{
-			StartCoroutine(StateDelay(state, delay));
+			gun.SetTrajectoryActive();
 		}
-		
-		public void SetAnimation(Enums.State state)
+
+		public void ThrowBall()
 		{
-			_playerAnimation.SetAnimation(state);
-		}
-		
-		public float GetCurrentAnimationDuration()
-		{
-			return _playerAnimation.GetCurrentAnimationDuration();
-		}
-		
-		public void RestoreHealth(int amount)
-		{
-			if (amount <= 0)
-				throw new ArgumentOutOfRangeException(nameof(amount));
+			SetAnimation(State.Throwing);
+			_ballsCount.GetBall();
+			gun.Shot();
 			
-			_lives.RestoreHealth(amount);
+			SubscribeToEvent(gun.CurrentBall);
+			StartCoroutine(SetIdleAnimation(throwDuration));
 		}
 		
-		public void TakeDamage(int amount)
+		private void SetAnimation(State state)
 		{
-			if (amount <= 0)
-				throw new ArgumentOutOfRangeException(nameof(amount));
+			_characterAnimation.SetAnimation(state);
+		}
+
+		private void SubscribeToEvent(BallBehavior ball)
+		{
+			if (ball != null)
+			{
+				ball.onBallDestroyed += CheckBallsCount;
+				_ballsList.Add(ball);
+			}
+			else
+			{
+				Debug.LogWarning($"{nameof(ball)} is null");
+			}
+		}
+
+		private void UnsubscribeFromAllEvents()
+		{
+			foreach (var ball in _ballsList)
+			{
+				ball.onBallDestroyed -= CheckBallsCount;
+			}
 			
-			_lives.TakeDamage(amount);
-			
+			_ballsList.Clear();
+		}
+
+		private void CheckBallsCount()
+		{
 			if (GameLogic.GameLogic.Instance != null)
 			{
-				if (Lives > 0)
+				if (BallsCount <= 0)
 				{
-					//GameLogic.GameLogic.Instance.Restart();
+					GameLogic.GameLogic.Instance.CheckDefeatedEnemies();
 				}
 				else
 				{
-					GameLogic.GameLogic.Instance.GameOver();
+					BallInit();
 				}
 			}
 			else
@@ -86,28 +119,31 @@ namespace Game.Scripts.Game.Player
 				Debug.LogWarning($"{nameof(GameLogic)} is null");
 			}
 		}
-        
-		public void SetControlActive()
-		{
-			OnControlActive?.Invoke(true);
-		}
-		
-		public void SetControlInactive()
-		{
-			OnControlActive?.Invoke(false);
-		}
 
 		private void Init()
 		{
-			_stateMachine = new StateMachine(this);
-			_stateMachine.Initialize(new IdleState());
+			if (LevelsManager.Scripts.LevelsManager.Instance != null)
+			{
+				_ballsCount.Init(LevelsManager.Scripts.LevelsManager.Instance.GetCurrentLevel().BallsAmount);
+				_ballsList = new List<BallBehavior>();
+				BallInit();
+			}
+			else
+			{
+				Debug.LogWarning($"{nameof(LevelsManager)} is null");
+			}
 		}
-		
-		private IEnumerator StateDelay(IState state, float duration)
+
+		private void BallInit()
+		{
+			onBallInit?.Invoke();
+		}
+
+		private IEnumerator SetIdleAnimation(float duration)
 		{
 			yield return new WaitForSeconds(duration);
 			
-			SetState(state);
+			SetAnimation(State.Idling);
 		}
 	}
 }
