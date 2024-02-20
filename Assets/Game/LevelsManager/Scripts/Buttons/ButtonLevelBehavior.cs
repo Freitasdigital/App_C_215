@@ -54,7 +54,7 @@ namespace Game.LevelsManager.Scripts.Buttons
 			}
 			else
 			{
-				Debug.LogWarning("LevelsManager.Instance is null");
+				Debug.LogWarning($"{nameof(LevelsManager)} is null");
 			}
 		}
 
@@ -100,7 +100,7 @@ namespace Game.LevelsManager.Scripts.Buttons
 			}
 			else
 			{
-				Debug.LogWarning("LevelsManager.Instance is null");
+				Debug.LogWarning($"{nameof(LevelsManager)} is null");
 			}
 		}
 

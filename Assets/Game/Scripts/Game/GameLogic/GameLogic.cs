@@ -119,6 +119,7 @@ namespace Game.Scripts.Game.GameLogic
 			Debug.Log("Game Over");
 			
 			AddReward();
+			IsPauseActive(true);
 			onGameOver?.Invoke(_isEnemiesDefeated, _currentLevel.LevelReward);
 		}
 

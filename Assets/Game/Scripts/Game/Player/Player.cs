@@ -56,6 +56,15 @@ namespace Game.Scripts.Game.Player
 		{
 			_ballsCount.AddBall();
 			BallInit();
+			
+			if (GameLogic.GameLogic.Instance != null)
+			{
+				GameLogic.GameLogic.Instance.IsPauseActive(false);
+			}
+			else
+			{
+				Debug.LogWarning($"{nameof(GameLogic)} is null");
+			}
 		}
 
 		public void SetTrajectoryActive()

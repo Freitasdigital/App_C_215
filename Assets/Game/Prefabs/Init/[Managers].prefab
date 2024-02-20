@@ -96,40 +96,40 @@ MonoBehaviour:
     levelReward: 50
   - level: 1
     enemiesCount: 3
-    ballsAmount: 0
-    levelReward: 0
+    ballsAmount: 4
+    levelReward: 100
   - level: 2
     enemiesCount: 2
-    ballsAmount: 0
-    levelReward: 0
+    ballsAmount: 4
+    levelReward: 150
   - level: 3
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 2
+    ballsAmount: 3
+    levelReward: 200
   - level: 4
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 4
+    ballsAmount: 5
+    levelReward: 250
   - level: 5
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 3
+    ballsAmount: 4
+    levelReward: 300
   - level: 6
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 4
+    ballsAmount: 5
+    levelReward: 350
   - level: 7
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 1
+    ballsAmount: 3
+    levelReward: 400
   - level: 8
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 2
+    ballsAmount: 3
+    levelReward: 450
   - level: 9
-    enemiesCount: 0
-    ballsAmount: 0
-    levelReward: 0
+    enemiesCount: 3
+    ballsAmount: 3
+    levelReward: 500
   stateContainer:
     openSprite: {fileID: 21300000, guid: 01a0d9556ff984a7592106e4992888b8, type: 3}
     lockSprite: {fileID: 21300000, guid: 1a29f5aea9f94414680cd98ffb833556, type: 3}

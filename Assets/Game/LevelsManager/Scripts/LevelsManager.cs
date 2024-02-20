@@ -42,8 +42,6 @@ namespace Game.LevelsManager.Scripts
 			}
 			
 			SetLevel(defaultLevel);
-
-			CheckEnemiesCount(3);
 		}
 
 		public void SetLevel(Levels level)
