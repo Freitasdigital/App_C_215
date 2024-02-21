@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTorque: 15
   maxTorque: 45
-  destroyDelay: 5
+  destroyDelay: 10
 --- !u!1 &9009703245928936110
 GameObject:
   m_ObjectHideFlags: 0

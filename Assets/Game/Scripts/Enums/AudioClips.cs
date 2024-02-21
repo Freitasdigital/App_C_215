@@ -4,12 +4,11 @@ namespace Game.Scripts.Enums
     {
         Buy,
         Click,
-        Coin,
-        LastChanceSpin,
-        LastChanceResult,
-        SlotsLose,
-        SlotsSpin,
-        SlotsWin,
+        DailyReward,
+        BallDestroy,
+        BallHit,
+        BallThrow,
+        EnemyHit,
         ResultWin,
         ResultLose
     }

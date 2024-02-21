@@ -1,3 +1,5 @@
+using Game.Scripts.Audio;
+using Game.Scripts.Enums;
 using Game.Scripts.Wallet;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,6 +30,7 @@ namespace Game.DailyReward.Scripts
 			var coins = rewardAmounts[_dayCounter];
 
 			Wallet.AddMoney(coins);
+			AudioEffectsManager.PlaySound(AudioClips.DailyReward.ToString());
 			onRewardGet?.Invoke(coins);
 			
 			Debug.Log($"Received {coins} coins as daily reward.");

@@ -1,3 +1,4 @@
+using Game.Scripts.Audio;
 using Game.Scripts.Enums;
 using Game.Scripts.Game.Animations;
 using Game.Scripts.Game.Interfaces;
@@ -20,6 +21,7 @@ namespace Game.Scripts.Game.Enemy
 		public void TakeDamage()
 		{
 			_collider2D.enabled = false;
+			AudioEffectsManager.PlaySound(AudioClips.EnemyHit.ToString());
 			SetAnimation(State.Death);
 
 			if (GameLogic.GameLogic.Instance != null)

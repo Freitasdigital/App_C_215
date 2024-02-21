@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Game.Scripts.Audio;
+using Game.Scripts.Enums;
 using Game.Scripts.Game.Interfaces;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -28,6 +30,8 @@ namespace Game.Trajectory.Scripts
 		{
 			_rigidbody2D.AddForce(forceDirection, ForceMode2D.Impulse);
 			_rigidbody2D.AddTorque(GetRandomTorque());
+			
+			AudioEffectsManager.PlaySound(AudioClips.BallThrow.ToString());
 		}
 
 		private float GetRandomTorque()
@@ -40,11 +44,14 @@ namespace Game.Trajectory.Scripts
 			yield return new WaitForSeconds(destroyDelay);
 
 			Destroy(gameObject);
+			AudioEffectsManager.PlaySound(AudioClips.BallDestroy.ToString());
 			onBallDestroyed?.Invoke();
 		}
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{
+			AudioEffectsManager.PlaySound(AudioClips.BallHit.ToString());
+			
 			_destroyCoroutine ??= StartCoroutine(DestroyAfterDelay());
 			
 			if (!other.gameObject.TryGetComponent(out IDamageable unit)) return;

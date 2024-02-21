@@ -1,3 +1,5 @@
+using Game.Scripts.Audio;
+using Game.Scripts.Enums;
 using Game.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Events;
@@ -86,6 +88,7 @@ namespace Game.Scripts.Game.Popups
 				_isBallBought = true;
 				
 				Wallet.Wallet.TryPurchase(price);
+                AudioEffectsManager.PlaySound(AudioClips.Buy.ToString());
 				Player.Player.Instance.AddBall();
 				onBuyPurchased?.Invoke();
 			}
