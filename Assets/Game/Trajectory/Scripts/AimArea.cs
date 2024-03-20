@@ -9,6 +9,8 @@ namespace Game.Trajectory.Scripts
 	public class AimArea : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
 		private Image _image;
+        
+		private bool _isTouching = false;
 
 		private void Awake()
 		{
@@ -17,6 +19,10 @@ namespace Game.Trajectory.Scripts
 		
 		public void OnPointerDown(PointerEventData eventData)
 		{
+			if (_isTouching) return;
+			
+			_isTouching = true;
+			
 			if (Player.Instance != null)
 			{
 				Player.Instance.SetTrajectoryActive();
@@ -29,6 +35,10 @@ namespace Game.Trajectory.Scripts
 		
 		public void OnPointerUp(PointerEventData eventData)
 		{
+			if (!_isTouching) return;
+			
+			_isTouching = false;
+				
 			if (Player.Instance != null)
 			{
 				Player.Instance.ThrowBall();
