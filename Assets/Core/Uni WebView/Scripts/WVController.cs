@@ -6,8 +6,9 @@ namespace Core
 {
     public class WVController : MonoBehaviour
     {
-        public const string AGREE_TERMS = "Agree_Terms";
-
+        [SerializeField, Header("Embedded Toolbar")]
+        private bool _embeddedToolbar;
+        
         [SerializeField, Header("Config")]
         private RemoteConfig config;
 
@@ -196,7 +197,27 @@ namespace Core
 
             _UWV = WVGO.AddComponent<UniWebView>();
 
-            _UWV.OnShouldClose += (view) => false;
+            ShouldClose();
+        }
+        
+        private void ShouldClose()
+        {
+            _UWV.OnShouldClose += (view) =>
+            {
+                //if (_UWV.CanGoBack)
+                //{
+                //    _UWV.GoBack();
+                //}
+                //else
+                {
+                    if (PlayerPrefs.GetString(Constants.LastUrl) != PlayerPrefs.GetString(Constants.StartUrl))
+                        _UWV.Load(PlayerPrefs.GetString(Constants.StartUrl));
+                    else
+                        _UWV.Reload();
+                }
+
+                return false;
+            };
         }
         
         private void SetRectWV()
@@ -294,6 +315,14 @@ namespace Core
             SetRectWV();
 
             _UWV.Show();
+            
+            if (_embeddedToolbar)
+            {
+                _UWV.EmbeddedToolbar.SetPosition(UniWebViewToolbarPosition.Bottom);
+                _UWV.EmbeddedToolbar.SetDoneButtonText("Home");
+                //_UWV.EmbeddedToolbar.HideNavigationButtons();
+                _UWV.EmbeddedToolbar.Show();
+            }
             
             WVLoadingCompleted?.Invoke();
 

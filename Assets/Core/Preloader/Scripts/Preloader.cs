@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using Prototype.SceneLoaderCore.Helpers;
-using Unity.VisualScripting.Dependencies.NCalc;
 
 namespace Core
 {

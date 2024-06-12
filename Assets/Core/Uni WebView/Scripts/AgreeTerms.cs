@@ -16,8 +16,8 @@ namespace Core
 
         public void Set()
         {
-            PlayerPrefs.SetInt(WVController.AGREE_TERMS, 1);
-            PlayerPrefs.Save();
+            //PlayerPrefs.SetInt(WVController.AGREE_TERMS, 1);
+            //PlayerPrefs.Save();
 
             SetInteractable(false);
         }
