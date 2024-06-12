@@ -22,7 +22,7 @@ namespace Game.Scripts.Game.Enemy
 		{
 			_collider2D.enabled = false;
 			AudioEffectsManager.PlaySound(AudioClips.EnemyHit.ToString());
-			SetAnimation(State.Death);
+			SetAnimation(Enums.State.Death);
 
 			if (GameLogic.GameLogic.Instance != null)
 			{
@@ -34,7 +34,7 @@ namespace Game.Scripts.Game.Enemy
 			}
 		}
 		
-		private void SetAnimation(State state)
+		private void SetAnimation(Enums.State state)
 		{
 			_characterAnimation.SetAnimation(state);
 		}

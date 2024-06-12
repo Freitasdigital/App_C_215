@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Game.Scripts.Enums;
 using Game.Scripts.Game.Animations;
 using Game.Trajectory.Scripts;
 using UnityEngine;
@@ -74,7 +73,7 @@ namespace Game.Scripts.Game.Player
 
 		public void ThrowBall()
 		{
-			SetAnimation(State.Throwing);
+			SetAnimation(Enums.State.Throwing);
 			_ballsCount.GetBall();
 			gun.Shot();
 			
@@ -82,7 +81,7 @@ namespace Game.Scripts.Game.Player
 			StartCoroutine(SetIdleAnimation(throwDuration));
 		}
 		
-		private void SetAnimation(State state)
+		private void SetAnimation(Enums.State state)
 		{
 			_characterAnimation.SetAnimation(state);
 		}
@@ -152,7 +151,7 @@ namespace Game.Scripts.Game.Player
 		{
 			yield return new WaitForSeconds(duration);
 			
-			SetAnimation(State.Idling);
+			SetAnimation(Enums.State.Idling);
 		}
 	}
 }
