@@ -37,35 +37,22 @@ public class Content : MonoBehaviour
         PrintMessage($"     ConstantState: {AppState.GetConstantState()}");
         
         PrintMessage($"     CurrentState: {AppState.GetCurrentState()}");
-        
-        if (AppState.GetConstantState() != State.None)
+
+        var isStateNone = AppState.GetConstantState() != State.None;
+
+        if (CheckState(isStateNone ? AppState.GetConstantState() : AppState.GetCurrentState()))
         {
-            if (AppState.GetConstantState() == State.White)
-            {
-                ShowWhiteApp();
-            }
-            else
-            {
-                PrintMessage($"Передаєм керування бекенду");
-            
-                if(InternetConnectionMonitor.Instance)
-                    InternetConnectionMonitor.Instance.StartCheckConnect();
-            }
+            ShowWhiteApp();
         }
         else
         {
-            if (AppState.GetCurrentState() == State.White)
-            {
-                ShowWhiteApp();
-            }
-            else
-            {
-                PrintMessage($"Передаєм керування бекенду");
-            
-                if(InternetConnectionMonitor.Instance)
-                    InternetConnectionMonitor.Instance.StartCheckConnect();
-            }
+            ShowGreyApp();
         }
+    }
+
+    private bool CheckState(State targetState, State expectedState = State.White)
+    {
+        return targetState == expectedState;
     }
 
     public void ShowWhiteApp()
@@ -81,11 +68,40 @@ public class Content : MonoBehaviour
             SceneManager.LoadScene("Game");
         }
     }
+
+    private void ShowGreyApp()
+    {
+        PrintMessage($"Передаєм керування бекенду");
+            
+        if(InternetConnectionMonitor.Instance)
+            InternetConnectionMonitor.Instance.StartCheckConnect();
+    }
     
     private string GetUrl()
     {
         return Settings.AdditionalUrl();
         //return isTest? isError? _url403 : _url200 : Settings.AdditionalUrl();
+    }
+
+    public void CheckContentIfDroppedInternet()
+    {
+        PrintMessage($"CheckContentIfDroppedInternet");
+        
+        var isStateNone = AppState.GetConstantState() == State.None;
+        
+        PrintMessage($"isStateNone = {isStateNone}");
+
+        if (isStateNone)
+        {
+            var currentState = AppState.GetCurrentState();
+            
+            PrintMessage($"isStateNone = {currentState}");
+        
+            if (CheckState(currentState) || CheckState(currentState, State.None))
+            {
+                ShowWhiteApp();
+            }
+        }
     }
     
     private void PrintMessage(string message)

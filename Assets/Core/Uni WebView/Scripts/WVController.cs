@@ -40,13 +40,19 @@ namespace Core
                 {
                     var newB1nom = config.GetURL();
                     var oldB1nom = PlayerPrefs.GetString(Constants.Binom, "");
+                    
+                    PrintMessage("Біном існує, будемо перевіряти його");
 
-                    if (config.isUrlDefaultB1n0m(newB1nom))
+                    if (config.IsEmptyB1n0m(newB1nom) || config.isUrlDefaultB1n0m(newB1nom))
                     {
+                        PrintMessage("Біном є тотожнім дефолтному ленду або порожній");
+                        
                         return PlayerPrefs.GetString(Constants.LastUrl, config.GetURL());
                     }
                     else
                     {
+                        PrintMessage("Біном НЕ дефолтний ленд і НЕ порожній");
+                        
                         if (newB1nom == oldB1nom)
                         {
                             PrintMessage("Біном не змінився, має бути LastUrl");
@@ -152,7 +158,7 @@ namespace Core
 
             PrintMessage($"CheckUrl -> configUrl: {configUrl}");
 
-            if (string.IsNullOrEmpty(configUrl) || config.isUrlDefaultB1n0m(configUrl))
+            if (config.IsEmptyB1n0m(configUrl) || config.isUrlDefaultB1n0m(configUrl))
             {
                 SetAppStateWhite();
             }
@@ -238,7 +244,7 @@ namespace Core
 
             //SaveUrls(url);
 
-            if (config.isUrlDefaultB1n0m(url))
+            if (config.IsEmptyB1n0m(url) || config.isUrlDefaultB1n0m(url))
             {
                 PrintMessage($"isUrlDefaultB1n0m: {url}");
                 

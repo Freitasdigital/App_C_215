@@ -180,7 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5173739270896164661, guid: 4f60110d187d60b478704fa24c81fe37, type: 3}
       propertyPath: mainScene
-      value: 
+      value: MenuScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173739270896164661, guid: 4f60110d187d60b478704fa24c81fe37, type: 3}
+      propertyPath: preloaderScene
+      value: SampleScene
       objectReference: {fileID: 0}
     - target: {fileID: 5173739270896164661, guid: 4f60110d187d60b478704fa24c81fe37, type: 3}
       propertyPath: baseScenes.Array.size

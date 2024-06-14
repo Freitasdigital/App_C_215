@@ -60,13 +60,20 @@ namespace Core
 
 		public bool isUrlDefaultB1n0m(string url)
 		{
-			PrintMessage($"isUrlDefaultB1n0m {url} ?= {GetDefaultB1n0m()}");
+			PrintMessage($"@@@ RemoteConfig -> isUrlDefaultB1n0m: {url} ?= {GetDefaultB1n0m()}");
 
 			var domainUrl = new Uri(url).Host;
 
 			var domainUDefaultBinom = new Uri(GetDefaultB1n0m()).Host;
 
 			return string.CompareOrdinal(domainUrl, domainUDefaultBinom) == 0;
+		}
+		
+		public bool IsEmptyB1n0m(string url)
+		{
+			PrintMessage($"@@@ RemoteConfig -> IsEmptyB1n0m: {url} is empty = {string.IsNullOrEmpty(url)}");
+
+			return string.IsNullOrEmpty(url);
 		}
 
 		private string GetDefaultB1n0m()
