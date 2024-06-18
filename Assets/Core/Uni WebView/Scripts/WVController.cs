@@ -192,6 +192,20 @@ namespace Core
 
             _UWV.Load(configUrl);
 
+            _UWV.OnPageStarted += (view, url) => { PrintMessage($"OnPageStarted: {url}");};
+
+            _UWV.OnLoadingErrorReceived += (view, code, message, payload) =>
+            {
+                PrintMessage($"OnLoadingErrorReceived: code={code}, message={message}, payload={payload}");
+                
+                if (code == 102)
+                {
+                    Debug.Log("Retrying to load page: " + configUrl);
+                    
+                    _UWV.Load(configUrl);
+                }
+            };
+
             _UWV.OnPageFinished += OnPageFinished;
         }
         
