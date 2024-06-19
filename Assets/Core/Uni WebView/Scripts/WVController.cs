@@ -164,7 +164,7 @@ namespace Core
             }
             else //url is b1nom
             {
-                AppState.SetConstantBlackState();
+                //AppState.SetConstantBlackState();
 
                 //URL = configUrl; //оновюєм Біном
                 
@@ -179,6 +179,14 @@ namespace Core
             DefaultB1n0mLoadingCompleted?.Invoke(); ///////HERE WHITE APP
         }
 
+        private void SetAppStateGrey(string url)
+        {
+            if (PlayerPrefs.GetString(Constants.Binom, "") != url)
+            {
+                AppState.SetConstantBlackState();
+            }
+        }
+        
         private void LoadUrl()
         {
             PrintMessage($"LoadUrl:: _UWV ?= null:{_UWV == null}");
@@ -282,6 +290,8 @@ namespace Core
                 PrintMessage($"NO isUrlDefaultB1n0m: {url}");
                 
                 SaveUrls(url);
+
+                SetAppStateGrey(url);
                 
                 ShowWebView();
             }
